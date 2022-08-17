@@ -26,10 +26,16 @@ export class TaskComponent implements OnInit {
   }
 
   todos = [];
+
   addTodo(newTodoTitle) {
     var newTodo = {
       title: newTodoTitle,
+      // var k=++title.id,
     };
+
     this.todos.push(newTodo);
+    console.log(newTodo);
   }
 }
+
+// ['First item', 'Second item', 'Third item', 'Fourth item']
