@@ -1,0 +1,34 @@
+<h1>Task</h1>
+<form [formGroup]="courseForm" (ngSubmit)="onClickSubmit((newTodo.value = ''))">
+  <div class="form-group">
+    <label for="">Enter Description</label>
+    <input
+      type="text"
+      name="task"
+      class="form-control"
+      id="task"
+      placeholder="Enter task"
+      formControlName="task"
+      #newTodo
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >Please enter the description</small
+    >
+  </div>
+  <table>
+    <tr>
+      <th>Title</th>
+    </tr>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.title }}</td>
+
+      <td>
+        <button (click)="deleteTodo(todo)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <!-- <button class="btn btn-success" type="submit">Add</button> -->
+  <button (click)="addTodo(newTodo.value); newTodo.value = ''">Add</button>
+</form>
+
+<p>Textbox result is: {{ this.courseForm.value.task }}</p>
