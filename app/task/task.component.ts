@@ -25,20 +25,8 @@ export class TaskComponent implements OnInit {
     });
   }
 
-  todos = [
-    {
-      title: 'Birthday',
-    },
-
-    {
-      title: 'Meeting',
-    },
-
-    {
-      title: 'Pay Bill',
-    },
-  ];
-  addTodo(newTodoTitle, newTodoPriority1, newTodoDone1) {
+  todos = [];
+  addTodo(newTodoTitle) {
     var newTodo = {
       title: newTodoTitle,
     };
